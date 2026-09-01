@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Toaster } from "@/components/ui/sonner";
 import App from "./App";
 import "./styles.css";
+import "./lib/catalog-enhancements";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
