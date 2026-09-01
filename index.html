@@ -17,5 +17,50 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      (() => {
+        const protectedProducts = new Set(["triply-kadai", "triply-cooker"]);
+        const money = (value) => `₹${Math.round(value).toLocaleString("en-IN")}`;
+
+        function applyThirtyPercentDiscount() {
+          document.querySelectorAll('#catalog a[href^="/product/"]').forEach((link) => {
+            const id = link.getAttribute("href")?.split("/").pop();
+            if (!id || protectedProducts.has(id)) return;
+            const card = link.closest("[class*='group flex flex-col']") || link.parentElement?.parentElement;
+            if (!card) return;
+            const prices = card.querySelectorAll(".line-through");
+            const sale = card.querySelector(".text-2xl.font-bold.text-copper");
+            const discountLabel = Array.from(card.querySelectorAll("span")).find((el) => /Flat 50% OFF/i.test(el.textContent || ""));
+            if (!sale || !prices.length) return;
+            const mrpText = prices[prices.length - 1].textContent || "";
+            const mrp = Number(mrpText.replace(/[^0-9.]/g, ""));
+            if (!Number.isFinite(mrp) || !mrp) return;
+            sale.textContent = money(mrp * 0.7);
+            if (discountLabel) discountLabel.textContent = "Flat 30% OFF — incl. taxes";
+          });
+
+          if (location.pathname.startsWith("/product/")) {
+            const id = location.pathname.split("/").filter(Boolean).pop();
+            if (!id || protectedProducts.has(id)) return;
+            const priceBox = Array.from(document.querySelectorAll(".rounded-2xl.border.bg-card")).find((el) => el.textContent?.includes("Aap bachat kar rahe hain"));
+            if (!priceBox) return;
+            const mrpEl = priceBox.querySelector(".line-through");
+            const saleEl = priceBox.querySelector(".text-4xl.font-bold.text-copper");
+            const discountEl = Array.from(priceBox.querySelectorAll("span")).find((el) => /% OFF/.test(el.textContent || ""));
+            if (!mrpEl || !saleEl) return;
+            const mrp = Number((mrpEl.textContent || "").replace(/[^0-9.]/g, ""));
+            if (!Number.isFinite(mrp) || !mrp) return;
+            const sale = Math.round(mrp * 0.7);
+            saleEl.textContent = money(sale);
+            if (discountEl) discountEl.textContent = "30% OFF";
+          }
+        }
+
+        const observer = new MutationObserver(applyThirtyPercentDiscount);
+        observer.observe(document.documentElement, { childList: true, subtree: true });
+        window.addEventListener("load", applyThirtyPercentDiscount, { once: true });
+        setTimeout(applyThirtyPercentDiscount, 400);
+      })();
+    </script>
   </body>
 </html>
