@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">SP Store</title>
+  <desc id="desc">Square SP Store cookware brand mark</desc>
+  <defs>
+    <linearGradient id="copper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff0d2"/>
+      <stop offset="0.2" stop-color="#ffd08a"/>
+      <stop offset="0.48" stop-color="#b96725"/>
+      <stop offset="0.72" stop-color="#ffcf83"/>
+      <stop offset="1" stop-color="#7b3514"/>
+    </linearGradient>
+    <linearGradient id="dark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a2118"/>
+      <stop offset="1" stop-color="#0f0b09"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#6e3519" flood-opacity=".3"/>
+    </filter>
+  </defs>
+  <rect x="18" y="18" width="476" height="476" rx="112" fill="url(#dark)" stroke="#8f461c" stroke-width="8"/>
+  <g transform="translate(256 250)" filter="url(#shadow)">
+    <ellipse cx="0" cy="142" rx="132" ry="30" fill="#5d2812" opacity=".28"/>
+    <path d="M-108 -55 Q0 -98 108 -55 L96 83 Q90 120 0 130 Q-90 120 -96 83Z" fill="url(#dark)" stroke="url(#copper)" stroke-width="11"/>
+    <path d="M-96 -36 Q0 -4 96 -36" fill="none" stroke="#e99a4d" stroke-width="6" opacity=".8"/>
+    <path d="M-94 54 Q0 88 94 54" fill="none" stroke="#8e451b" stroke-width="6" opacity=".7"/>
+    <path d="M-126 -75 Q0 -136 126 -75 Q120 -47 96 -37 Q0 -72 -96 -37 Q-120 -47 -126 -75Z" fill="url(#copper)" stroke="#6f3214" stroke-width="5"/>
+    <path d="M-54 -116 Q0 -144 54 -116 L40 -84 Q0 -99 -40 -84Z" fill="url(#copper)"/>
+    <ellipse cx="0" cy="-119" rx="34" ry="13" fill="#8e461d" stroke="#ffd58f" stroke-width="5"/>
+    <path d="M-130 -18 Q-158 -34 -164 -62 M130 -18 Q158 -34 164 -62" fill="none" stroke="url(#copper)" stroke-width="13" stroke-linecap="round"/>
+    <text x="0" y="50" text-anchor="middle" font-family="Georgia,serif" font-size="118" font-weight="700" font-style="italic" fill="url(#copper)" stroke="#5d2b13" stroke-width="4">SP</text>
+    <path d="M-124 92 Q0 160 124 92" fill="none" stroke="url(#copper)" stroke-width="12" stroke-linecap="round"/>
+  </g>
+</svg>
