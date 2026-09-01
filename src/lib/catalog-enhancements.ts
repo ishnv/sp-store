@@ -85,14 +85,10 @@ const GENERAL_PRODUCTS: Product[] = [
   },
 ];
 
-// Keep the existing PNB cookware catalog untouched; append only general essentials.
 for (const product of GENERAL_PRODUCTS) {
   if (!PRODUCTS.some((existing) => existing.id === product.id)) PRODUCTS.push(product);
 }
 
-// Product-card image controls live inside the outer React Router <Link>.
-// Prevent the browser's default navigation while allowing the button's own React
-// click handler to update the gallery index normally.
 if (typeof document !== "undefined") {
   document.addEventListener("click", (event) => {
     const target = event.target as HTMLElement | null;
@@ -101,4 +97,22 @@ if (typeof document !== "undefined") {
     );
     if (control) event.preventDefault();
   }, true);
+
+  const NEW_PRODUCT_IDS = new Set(GENERAL_PRODUCTS.map((product) => product.id));
+
+  const syncDiscountLabels = () => {
+    document.querySelectorAll<HTMLElement>('a[href^="/product/"]').forEach((link) => {
+      const match = link.getAttribute("href")?.match(/^\/product\/([^/]+)$/);
+      if (!match || !NEW_PRODUCT_IDS.has(match[1])) return;
+      const card = link.closest<HTMLElement>(".group");
+      const label = card?.querySelector<HTMLElement>(".text-emerald-600");
+      if (label && label.textContent !== "Flat 40% OFF — incl. taxes") {
+        label.textContent = "Flat 40% OFF — incl. taxes";
+      }
+    });
+  };
+
+  const observer = new MutationObserver(syncDiscountLabels);
+  observer.observe(document.body, { childList: true, subtree: true });
+  queueMicrotask(syncDiscountLabels);
 }
