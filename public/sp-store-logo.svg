@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 220" role="img" aria-labelledby="title desc">
+  <title id="title">SP Store</title>
+  <desc id="desc">Premium copper three-dimensional cookware inspired SP Store logo</desc>
+  <defs>
+    <linearGradient id="copper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff0d2"/>
+      <stop offset="0.18" stop-color="#ffd08a"/>
+      <stop offset="0.45" stop-color="#b96725"/>
+      <stop offset="0.68" stop-color="#ffcf83"/>
+      <stop offset="1" stop-color="#7b3514"/>
+    </linearGradient>
+    <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.45" stop-color="#c8c8c8"/>
+      <stop offset="0.75" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#888888"/>
+    </linearGradient>
+    <linearGradient id="dark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a2118"/>
+      <stop offset="1" stop-color="#0f0b09"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="9" stdDeviation="8" flood-color="#6e3519" flood-opacity=".32"/>
+    </filter>
+  </defs>
+
+  <g transform="translate(16 18)" filter="url(#shadow)">
+    <!-- stylized 3D pressure-cooker / pot mark -->
+    <ellipse cx="88" cy="159" rx="68" ry="18" fill="#5d2812" opacity=".22"/>
+    <path d="M30 83 Q88 58 146 83 L138 145 Q134 165 88 171 Q42 165 38 145Z" fill="url(#dark)" stroke="url(#copper)" stroke-width="7"/>
+    <path d="M38 92 Q88 110 138 92" fill="none" stroke="#e99a4d" stroke-width="4" opacity=".8"/>
+    <path d="M39 132 Q88 151 137 132" fill="none" stroke="#8e451b" stroke-width="4" opacity=".7"/>
+    <path d="M23 78 Q88 47 153 78 Q150 91 138 96 Q88 78 38 96 Q26 91 23 78Z" fill="url(#copper)" stroke="#6f3214" stroke-width="3"/>
+    <path d="M61 59 Q88 45 115 59 L108 73 Q88 65 68 73Z" fill="url(#copper)"/>
+    <ellipse cx="88" cy="55" rx="17" ry="7" fill="#8e461d" stroke="#ffd58f" stroke-width="3"/>
+    <path d="M20 99 Q8 91 5 80 M156 99 Q168 91 171 80" fill="none" stroke="url(#copper)" stroke-width="8" stroke-linecap="round"/>
+    <text x="88" y="126" text-anchor="middle" font-family="Georgia,serif" font-size="52" font-weight="700" font-style="italic" fill="url(#copper)" stroke="#5d2b13" stroke-width="2">SP</text>
+    <path d="M22 151 Q88 190 154 151" fill="none" stroke="url(#copper)" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(190 45)">
+    <text x="0" y="68" font-family="Georgia,serif" font-size="68" font-weight="800" font-style="italic" letter-spacing="-2" fill="url(#copper)">SP</text>
+    <text x="126" y="68" font-family="Arial,sans-serif" font-size="68" font-weight="800" letter-spacing="-2" fill="url(#silver)">STORE</text>
+    <path d="M4 87 H492" stroke="url(#copper)" stroke-width="3" stroke-linecap="round" opacity=".85"/>
+    <text x="5" y="115" font-family="Arial,sans-serif" font-size="19" font-weight="700" letter-spacing="6" fill="#a95b26">BARTAN &amp; HOME ESSENTIALS</text>
+  </g>
+</svg>
