@@ -1,11 +1,9 @@
-/* Premium SP Store brand mark — loaded independently so the main app stays untouched. */
+/* SP Store branding: square mark for compact navigation + full wordmark for footer. */
 header a[href="/"] > span:first-child,
 footer span.gradient-copper {
   position: relative;
   overflow: hidden;
-  background: url('/sp-store-logo.svg') center / contain no-repeat !important;
   background-color: transparent !important;
-  background-image: url('/sp-store-logo.svg') !important;
   color: transparent !important;
   text-indent: -9999px;
   white-space: nowrap;
@@ -13,15 +11,19 @@ footer span.gradient-copper {
   box-shadow: none !important;
 }
 
+/* The navbar now uses a true 1:1 square brand mark so it reads clearly at a glance. */
 header a[href="/"] > span:first-child {
-  width: 58px !important;
+  width: 46px !important;
   height: 46px !important;
+  aspect-ratio: 1 / 1 !important;
+  flex: 0 0 46px;
   border-radius: 12px !important;
+  background: url('/sp-store-mark.svg') center / 100% 100% no-repeat !important;
   filter: drop-shadow(0 5px 9px rgba(126, 60, 20, .25));
 }
 
 header a[href="/"] > span:first-child + span {
-  margin-left: -2px;
+  margin-left: 0;
 }
 
 footer span.gradient-copper {
@@ -29,22 +31,22 @@ footer span.gradient-copper {
   height: 58px !important;
   border-radius: 0 !important;
   flex: 0 0 auto;
+  background: url('/sp-store-logo.svg') center / contain no-repeat !important;
   filter: drop-shadow(0 7px 12px rgba(126, 60, 20, .22));
 }
 
-/* Keep the compact header mark crisp while scrolling. */
 header a[href="/"] > span:first-child {
   transition: width .3s ease, height .3s ease, filter .3s ease;
 }
 
-/* Hide the old footer text next to the new full wordmark. */
 footer .flex.items-center.gap-3 > span.gradient-copper + span {
   display: none;
 }
 
 @media (max-width: 639px) {
   header a[href="/"] > span:first-child {
-    width: 50px !important;
+    width: 42px !important;
     height: 42px !important;
+    flex-basis: 42px;
   }
 }
